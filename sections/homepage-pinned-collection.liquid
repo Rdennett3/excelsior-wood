@@ -1,0 +1,138 @@
+{{ 'base.css' | asset_url | stylesheet_tag }}
+{{ 'homepage-pinned-collection.css' | asset_url | stylesheet_tag }}
+
+<div class="collection-container">
+  <div class="collection-wrapper">
+    <div class="collection-section pinned-collection">
+      <h1 class="large pinned-h1">SHOP BY CATEGORY</h1>
+    </div>
+    <div class="collection-section">
+      <div class="collection-item">
+        <div class="collection-inner">
+          <img src="{{ section.settings.collection-image-1 | img_url: 'master' }}">
+        </div>
+        <div class="collection-inner">
+        
+        </div>
+      </div>
+      <div class="collection-item">
+        <div class="collection-inner">
+          <img src="{{ section.settings.collection-image-2 | img_url: 'master' }}">
+        </div>
+        <div class="collection-inner">
+        
+        </div>
+      </div>
+      <div class="collection-item">
+        <div class="collection-inner">
+          <img src="{{ section.settings.collection-image-3 | img_url: 'master' }}">
+        </div>
+        <div class="collection-inner">
+        
+        </div>
+      </div>
+      <div class="collection-item">
+        <div class="collection-inner">
+          <img src="{{ section.settings.collection-image-4 | img_url: 'master' }}">
+        </div>
+        <div class="collection-inner">
+        
+        </div>
+      </div>
+      <div class="collection-item">
+        <div class="collection-inner">
+          <img src="{{ section.settings.collection-image-5 | img_url: 'master' }}">
+        </div>
+        <div class="collection-inner">
+        
+        </div>
+      </div>
+      <div class="collection-item">
+        <div class="collection-inner">
+          <img src="{{ section.settings.collection-image-6 | img_url: 'master' }}">
+        </div>
+        <div class="collection-inner">
+        
+        </div>
+      </div>
+      <div class="collection-item">
+        <div class="collection-inner">
+          <img src="{{ section.settings.collection-image-7 | img_url: 'master' }}">
+        </div>
+        <div class="collection-inner">
+        
+        </div>
+      </div>
+      <div class="collection-item">
+        <div class="collection-inner">
+          <img src="{{ section.settings.collection-image-8 | img_url: 'master' }}">
+        </div>
+        <div class="collection-inner">
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "pinned-collection",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "collection-image-1",
+      "label": "Collection image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "collection-image-2",
+      "label": "Collection image 2"
+    },
+    {
+        "type": "image_picker",
+        "id": "collection-image-3",
+        "label": "Collection image 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection-image-4",
+        "label": "Collection image 4"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection-image-5",
+        "label": "Collection image 5"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection-image-6",
+        "label": "Collection image 6"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection-image-7",
+        "label": "Collection image 7"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection-image-8",
+        "label": "Collection image 8"
+      }
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+  gsap.to('.h1', {
+    scrollTrigger: {
+      trigger: '.collection-container',
+      start: 'top top',
+      end: '+=500',
+      pin: '.pinned-h1',
+      scrub: 2,
+    },
+    opacity: 1,
+    y: 300,
+  });
+{% endjavascript %}

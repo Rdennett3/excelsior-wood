@@ -1,0 +1,57 @@
+{
+  "sections": {
+    "alternate-slideshow": {
+      "type": "alternate-slideshow",
+      "settings": {
+        "header-img-1": "shopify:\/\/shop_images\/excelsior-header.png",
+        "slide_1_headline": "<p>This is a headline<\/p>",
+        "slide_1_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation<\/p>",
+        "header-img-2": "shopify:\/\/shop_images\/Hero2-min.png",
+        "slide_2_headline": "<p>This is a headline<\/p>",
+        "slide_2_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation<\/p>",
+        "header-img-3": "shopify:\/\/shop_images\/Hero1-min.png",
+        "slide_3_headline": "<p>This is a headline<\/p>",
+        "slide_3_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation<\/p>"
+      }
+    },
+    "homepage-about": {
+      "type": "homepage-about",
+      "settings": {
+      }
+    },
+    "homepage-pinned-collection": {
+      "type": "homepage-pinned-collection",
+      "settings": {
+        "collection-image-1": "shopify:\/\/shop_images\/collection1.png",
+        "collection-image-2": "shopify:\/\/shop_images\/collection2.png",
+        "collection-image-3": "shopify:\/\/shop_images\/collection3.png",
+        "collection-image-4": "shopify:\/\/shop_images\/collection4.png",
+        "collection-image-5": "shopify:\/\/shop_images\/collection5.png",
+        "collection-image-6": "shopify:\/\/shop_images\/collection6.png",
+        "collection-image-7": "shopify:\/\/shop_images\/collection7.png",
+        "collection-image-8": "shopify:\/\/shop_images\/collection8.png"
+      }
+    },
+    "cde96a41-9118-4e8d-808d-951df5e9b7ae": {
+      "type": "video",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https:\/\/youtu.be\/w1SqxkkB-UU",
+        "cover_image": "shopify:\/\/shop_images\/Thumbnail_Updated_Twice.png",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "alternate-slideshow",
+    "homepage-about",
+    "homepage-pinned-collection",
+    "cde96a41-9118-4e8d-808d-951df5e9b7ae"
+  ]
+}

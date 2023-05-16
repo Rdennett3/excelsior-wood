@@ -1,0 +1,101 @@
+{{ 'base.css' | asset_url | stylesheet_tag }}
+{{ 'alternate-slideshow.css' | asset_url | stylesheet_tag }}
+
+<div class="slider-container">
+  <div class="slider-inner">
+    <div class="glide glide-02">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+            <li class="glide__slide glide-slide-header">
+              <img alt="header-image" src="{{ section.settings.header-img-1 | img_url: 'master' }}" alt="" width="auto" height="auto" loading="lazy">
+              <div class="slider-info">
+                <h1 class="slider-info-1"> {{ section.settings.slide_1_headline }} </h1>
+                <p class="slider-text slider-info-1"> {{ section.settings.slide_1_text }} </p>
+                <a href="{{ section.settings.slider-1-link }}" class="slider-btn slider-info-1">Shop Now</a>
+              </div>
+            </li>
+          <li class="glide__slide glide-slide-header">
+            <img src="{{ section.settings.header-img-2 | img_url: 'master' }}" alt="" width="auto" height="auto" loading="lazy">
+            <div class="slider-info">
+              <h1> {{ section.settings.slide_2_headline }} </h1>
+              <p class="slider-text"> {{ section.settings.slide_2_text }} </p>
+              <a href="{{ section.settings.slider-2-link }}" class="slider-btn">Shop Now</a>
+            </div>
+          </li>
+          <li class="glide__slide glide-slide-header">
+            <img src="{{ section.settings.header-img-3 | img_url: 'master' }}" alt="" width="auto" height="auto" loading="lazy">
+            <div class="slider-info">
+              <h1> {{ section.settings.slide_3_headline }} </h1>
+              <p class="slider-text"> {{ section.settings.slide_2_text }} </p>
+              <a href="{{ section.settings.slider-3-link }}" class="slider-btn">Shop Now</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+        <div class="slider-button-container" data-glide-el="controls">
+          <div data-glide-dir="<"><span class="material-symbols-outlined slider-icon">arrow_back</span></div>
+          <div data-glide-dir=">"><span class="material-symbols-outlined slider-icon">arrow_forward</span></div>
+        </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "alternate-slideshow",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "header-img-1",
+      "label": "slider image 1"
+    },
+    {
+      "id": "slide_1_headline",
+      "type": "richtext",
+      "label": "First Slide Header"
+    },
+    {
+      "id": "slide_1_text",
+      "type": "text",
+      "label": "First Slide Text",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "header-img-2",
+      "label": "slider image 2"
+    },
+    {
+      "id": "slide_2_headline",
+      "type": "richtext",
+      "label": "Second Slide Header"
+    },
+    {
+      "id": "slide_2_text",
+      "type": "richtext",
+      "label": "Second Slide Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "header-img-3",
+      "label": "slider image-3"
+    },
+    {
+      "id": "slide_3_headline",
+      "type": "richtext",
+      "label": "Third Slide Header"
+    },
+    {
+      "id": "slide_3_text",
+      "type": "richtext",
+      "label": "Third Slide Text"
+    }
+  ]
+}
+{% endschema %}
+
+{% javascript %}
+  new Glide('.glide-02', {
+    autoplay: 8000,
+  }).mount();
+{% endjavascript %}
