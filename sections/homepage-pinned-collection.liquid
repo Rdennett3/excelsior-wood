@@ -6,10 +6,11 @@
     <div class="collection-section pinned-collection">
       <h1 class="large pinned-h1">SHOP BY CATEGORY</h1>
     </div>
-    <div class="collection-section">
+    <div class="collection-section collection-areas">
       <div class="collection-item">
         <div class="collection-inner">
           <img src="{{ section.settings.collection-image-1 | img_url: 'master' }}">
+          <p class="collection-title">Collection 1</p>
         </div>
         <div class="collection-inner">
         
@@ -18,6 +19,7 @@
       <div class="collection-item">
         <div class="collection-inner">
           <img src="{{ section.settings.collection-image-2 | img_url: 'master' }}">
+          <p class="collection-title">Collection 2</p>
         </div>
         <div class="collection-inner">
         
@@ -26,6 +28,7 @@
       <div class="collection-item">
         <div class="collection-inner">
           <img src="{{ section.settings.collection-image-3 | img_url: 'master' }}">
+          <p class="collection-title">Collection 3</p>
         </div>
         <div class="collection-inner">
         
@@ -34,6 +37,7 @@
       <div class="collection-item">
         <div class="collection-inner">
           <img src="{{ section.settings.collection-image-4 | img_url: 'master' }}">
+          <p class="collection-title">Collection 4</p>
         </div>
         <div class="collection-inner">
         
@@ -42,6 +46,7 @@
       <div class="collection-item">
         <div class="collection-inner">
           <img src="{{ section.settings.collection-image-5 | img_url: 'master' }}">
+          <p class="collection-title">Collection 5</p>
         </div>
         <div class="collection-inner">
         
@@ -50,6 +55,7 @@
       <div class="collection-item">
         <div class="collection-inner">
           <img src="{{ section.settings.collection-image-6 | img_url: 'master' }}">
+          <p class="collection-title">Collection 6</p>
         </div>
         <div class="collection-inner">
         
@@ -58,6 +64,7 @@
       <div class="collection-item">
         <div class="collection-inner">
           <img src="{{ section.settings.collection-image-7 | img_url: 'master' }}">
+          <p class="collection-title">Collection 7</p>
         </div>
         <div class="collection-inner">
         
@@ -66,6 +73,7 @@
       <div class="collection-item">
         <div class="collection-inner">
           <img src="{{ section.settings.collection-image-8 | img_url: 'master' }}">
+          <p class="collection-title">Collection 8</p>
         </div>
         <div class="collection-inner">
         
@@ -128,11 +136,56 @@
     scrollTrigger: {
       trigger: '.collection-container',
       start: 'top top',
-      end: '+=500',
+      end: '+=900',
       pin: '.pinned-h1',
       scrub: 2,
     },
     opacity: 1,
     y: 300,
+  });
+
+  // *************************************
+  // PINNED COLLECTIONS SLIDE UP ANIMATION
+  // *************************************
+  let collectionmm = gsap.matchMedia();
+
+  collectionmm.add('(min-width:900px)', () => {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.collection-areas',
+        start: 'top 30%',
+        end: 'top top',
+      },
+    });
+
+    tl.from('.collection-item', {
+      autoAlpha:0,
+      y: 250,
+      stagger:.25,
+    }).to('.collection-item', {
+      autoAlpha:1,
+      y:0,
+      stagger:.25
+    });
+  });
+
+  abouttxtmm.add('(max-width:899px)', () => {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.about-wrapper',
+        start: 'top 50%',
+        end: 'top top',
+      },
+    });
+
+    tl.from('.about-wrapper p span', {
+      y: 150,
+      stagger: 0.05,
+      autoAlpha: 0,
+    }).to('.about-wrapper p span', {
+      stagger: 0.05,
+      y: 0,
+      autoAlpha: 1,
+    });
   });
 {% endjavascript %}

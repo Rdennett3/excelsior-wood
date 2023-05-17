@@ -45,16 +45,34 @@
     height:auto;
     min-height:250px;
     border:2px solid var(--black);
-    border-radius:20px;
     display:flex;
     align-items: center;
     justify-content: center;
     background-size: cover;
     background-position:center;
+    border-radius:20px;
+}
+
+.collection-inner{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+
+.collection-inner p::after{
+    font-family:"Font Awesome 6 Pro";
+    content:" \f178";
+    font-size:1.2em;
+}
+
+.collection-inner p{
+    font-size:1.5em;
 }
 
 .collection-inner img{
     width:100%;
     height:auto;
-    border-radius:20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }

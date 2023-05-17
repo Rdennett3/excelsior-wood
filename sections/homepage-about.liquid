@@ -4,13 +4,9 @@
 <div class="about-container">
   <div class="about-wrapper">
     <h1 class="large">WOOD IS IN OUR HERITAGE</h1>
-    <p>
-      Excelsior Wood Products, LLC has been manufacturing custom wood products since 2002. What started as a two-person operation, is now a family-owned and operated full-service mill and lumber supply company. Our roots are in farming, so we have a profound respect for nature and hard work.<br>
-      <br>
-      We are located in Kingston, NY (Ulster County) within proximity of Albany and New York City. Excelsior’s owner, Ron Sauer, is a native of Saugerties, NY, and is proud to own and operate a local business. We serve customers locally, throughout New York, Connecticut, New Jersey, and Massachusetts. We can fulfill orders across the entire continental United States.<br>
-      <br>
-      Excelsior Wood Products began by producing architectural millwork. This required us to invest in some of the highest quality, best-performing equipment available. These machines are typically found only in true high-end cabinet and mill workshops. While we still produce the finest custom moldings, we also bring the highest level of technology and craftsmanship to our reclaimed and new products
-    </p>
+      <p>Excelsior Wood Products, LLC has been manufacturing custom wood products since 2002. What started as a two-person operation, is now a family-owned and operated full-service mill and lumber supply company. Our roots are in farming, so we have a profound respect for nature and hard work.</p>
+      <p>We are located in Kingston, NY (Ulster County) within proximity of Albany and New York City. Excelsior’s owner, Ron Sauer, is a native of Saugerties, NY, and is proud to own and operate a local business. We serve customers locally, throughout New York, Connecticut, New Jersey, and Massachusetts. We can fulfill orders across the entire continental United States.</p>
+      <p>Excelsior Wood Products began by producing architectural millwork. This required us to invest in some of the highest quality, best-performing equipment available. These machines are typically found only in true high-end cabinet and mill workshops. While we still produce the finest custom moldings, we also bring the highest level of technology and craftsmanship to our reclaimed and new products</p>
   </div>
 </div>
 
@@ -30,24 +26,71 @@
       y: 250,
       autoAlpha: 0,
     }).to('.about-wrapper h1', {
+      y:0,
       autoAlpha: 1,
     });
   });
 
-  imagemm.add('(max-width:899px)', () => {
+  aboutmm.add('(max-width:899px)', () => {
     let tl = gsap.timeline({
       scrollTrigger: {
-        trigger: '#event-section',
+        trigger: '.about-wrapper',
         start: 'top 50%',
         end: 'top top',
       },
     });
 
-    tl.from('.event-section-inner', {
+    tl.from('.about-wrapper h1', {
       y: 150,
       stagger: 0.05,
       autoAlpha: 0,
-    }).to('.event-section-inner', {
+    }).to('.about-wrapper h1', {
+      stagger: 0.05,
+      y: 0,
+      autoAlpha: 1,
+    });
+  });
+
+  // ******************
+  // about-section-text
+  // ******************
+
+  let abouttxtmm = gsap.matchMedia();
+
+  abouttxtmm.add('(min-width:900px)', () => {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.about-wrapper',
+        start: 'top 30%',
+        end: 'top top',
+      },
+    });
+
+    tl.from('.about-wrapper p', {
+      autoAlpha:0,
+      y: 250,
+      stagger:.25,
+    }).to('.about-wrapper p', {
+      autoAlpha:1,
+      y:0,
+      stagger:.25
+    });
+  });
+
+  abouttxtmm.add('(max-width:899px)', () => {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.about-wrapper',
+        start: 'top 50%',
+        end: 'top top',
+      },
+    });
+
+    tl.from('.about-wrapper p span', {
+      y: 150,
+      stagger: 0.05,
+      autoAlpha: 0,
+    }).to('.about-wrapper p span', {
       stagger: 0.05,
       y: 0,
       autoAlpha: 1,

@@ -98,4 +98,15 @@
   new Glide('.glide-02', {
     autoplay: 8000,
   }).mount();
+  
+    gsap.fromTo(".glide-02 .slider-info h1", {
+        y: 400,
+        autoAlpha: 0
+    }, {
+        duration: 1,
+        ease: "power4.out",
+        y: 0,
+        autoAlpha: 1
+    });
+
 {% endjavascript %}
