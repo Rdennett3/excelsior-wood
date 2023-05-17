@@ -1,2 +1,1 @@
-NEW THEME FOR EXCELSIOR WOOD
-BUILT BY BOB DENNETT
+Shopify theme for Excelsior Wood
